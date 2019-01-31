@@ -19,3 +19,4 @@ protocol RateListViewModelProtocol {
     func item(at index: Int) -> Item?
 }
 
+
