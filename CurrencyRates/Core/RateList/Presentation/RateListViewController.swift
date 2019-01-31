@@ -14,6 +14,7 @@ class RateListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(RateCell.self)
+            tableView.estimatedRowHeight = 70
         }
     }
     
@@ -49,7 +50,7 @@ class RateListViewController: UIViewController {
             }
             else {
                 for i in 1..<items.count {
-                    guard let cell = self.tableView.cellForRow(at: IndexPath(row: i, section: 0)) as? RateCell else { return }
+                    guard let cell = self.tableView.cellForRow(at: IndexPath(row: i, section: 0)) as? RateCell else { continue }
                     self.cellPresenter.present(items[i], in: cell)
                 }
             }
@@ -115,6 +116,5 @@ extension RateListViewController: UITableViewDelegate {
     
         viewModel.baseCurrency = currency
         viewModel.baseAmount = Double(amountString) ?? 0
-        
      }
 }
