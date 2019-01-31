@@ -30,6 +30,10 @@
 		AC049D6F2203061400F39BCF /* UIViewController+ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D6B2203061300F39BCF /* UIViewController+ChildViewController.swift */; };
 		AC049D702203061400F39BCF /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D6C2203061400F39BCF /* NibLoadableView.swift */; };
 		AC049D712203061400F39BCF /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D6D2203061400F39BCF /* ReusableView.swift */; };
+		AC049D79220306B000F39BCF /* RateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D77220306B000F39BCF /* RateListViewController.swift */; };
+		AC049D7A220306B000F39BCF /* RateListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC049D78220306B000F39BCF /* RateListViewController.xib */; };
+		AC049D7D2203078700F39BCF /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D7B2203078700F39BCF /* RateCell.swift */; };
+		AC049D7E2203078700F39BCF /* RateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC049D7C2203078700F39BCF /* RateCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +110,10 @@
 		AC049D6B2203061300F39BCF /* UIViewController+ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildViewController.swift"; sourceTree = "<group>"; };
 		AC049D6C2203061400F39BCF /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		AC049D6D2203061400F39BCF /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		AC049D77220306B000F39BCF /* RateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateListViewController.swift; sourceTree = "<group>"; };
+		AC049D78220306B000F39BCF /* RateListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateListViewController.xib; sourceTree = "<group>"; };
+		AC049D7B2203078700F39BCF /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
+		AC049D7C2203078700F39BCF /* RateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +197,8 @@
 		AC049D352202F2ED00F39BCF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AC049D762203066B00F39BCF /* DI */,
+				AC049D722203064D00F39BCF /* RateList */,
 				AC049D61220304B800F39BCF /* WebService */,
 				AC049D522202F30100F39BCF /* Common */,
 				AC049D362202F2ED00F39BCF /* Core.h */,
@@ -262,6 +272,48 @@
 				AC049D63220304DC00F39BCF /* WebServiceAssembly.swift */,
 			);
 			path = WebService;
+			sourceTree = "<group>";
+		};
+		AC049D722203064D00F39BCF /* RateList */ = {
+			isa = PBXGroup;
+			children = (
+				AC049D752203066700F39BCF /* DI */,
+				AC049D742203065800F39BCF /* Repositories */,
+				AC049D732203065200F39BCF /* Presentation */,
+			);
+			path = RateList;
+			sourceTree = "<group>";
+		};
+		AC049D732203065200F39BCF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AC049D77220306B000F39BCF /* RateListViewController.swift */,
+				AC049D78220306B000F39BCF /* RateListViewController.xib */,
+				AC049D7B2203078700F39BCF /* RateCell.swift */,
+				AC049D7C2203078700F39BCF /* RateCell.xib */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AC049D742203065800F39BCF /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Repositories;
+			sourceTree = "<group>";
+		};
+		AC049D752203066700F39BCF /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		AC049D762203066B00F39BCF /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +475,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC049D7A220306B000F39BCF /* RateListViewController.xib in Resources */,
+				AC049D7E2203078700F39BCF /* RateCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +519,9 @@
 				AC049D66220304DC00F39BCF /* WebServiceAssembly.swift in Sources */,
 				AC049D5B2202F82300F39BCF /* RatesResponse.swift in Sources */,
 				AC049D6E2203061400F39BCF /* UITableView+Reusable.swift in Sources */,
+				AC049D7D2203078700F39BCF /* RateCell.swift in Sources */,
 				AC049D67220304DC00F39BCF /* Endpoint.swift in Sources */,
+				AC049D79220306B000F39BCF /* RateListViewController.swift in Sources */,
 				AC049D6F2203061400F39BCF /* UIViewController+ChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
