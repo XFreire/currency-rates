@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class RateListAssembly {
+final public class RateListAssembly {
     
     // MARK: Properties
     let webServiceAssembly: WebServiceAssembly
@@ -18,7 +18,7 @@ final class RateListAssembly {
         self.webServiceAssembly = webServiceAssembly
     }
     
-    func viewController() -> UIViewController {
+    public func viewController() -> UIViewController {
         return RateListViewController(viewModel: viewModel(), cellPresenter: cellPresenter())
     }
     
