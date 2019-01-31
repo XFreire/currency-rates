@@ -18,7 +18,7 @@ class RateListViewController: UIViewController {
     }
     
     // MARK: Properties
-    private let viewModel: RateListViewModelProtocol
+    private var viewModel: RateListViewModelProtocol
     private let cellPresenter: RateCellPresenter
     
     // MARK: Initialization
@@ -45,6 +45,15 @@ class RateListViewController: UIViewController {
     }
 }
 
+extension RateListViewController {
+    @objc func textDidChange(textField: UITextField) {
+        guard let numberString = textField.text,
+            let amount = Double(numberString) else { return }
+        
+        // Bind text to viewModel
+        viewModel.baseAmount = amount
+    }
+}
 extension RateListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.count
@@ -75,9 +84,9 @@ extension RateListViewController: UITableViewDelegate {
         // Enable UITextFields of tapped cell
         tappedCell.textField.isUserInteractionEnabled = true
         
-        // UITextField becomes first responder
+        // UITextField becomes first responder and add target
         tappedCell.textField.becomeFirstResponder()
-        
+        tappedCell.textField.addTarget(self, action: #selector(textDidChange(textField:)), for: .editingChanged)
         // Move tappedCell to the top
         tableView.moveRow(at: indexPath, to: topIndexPath)
         
@@ -87,7 +96,11 @@ extension RateListViewController: UITableViewDelegate {
         
         // Disable text field of second cell
         secondCell.textField.isUserInteractionEnabled = false
-         
-        #warning("Add textfield delegate or notifications")
-    }
+        
+        // Bind currency to viewModel
+        guard let currencyString = tappedCell.titleLabel.text,
+            let currency = Currency(rawValue: currencyString) else { return }
+        
+        viewModel.baseCurrency = currency
+     }
 }

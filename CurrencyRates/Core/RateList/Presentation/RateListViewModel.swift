@@ -25,9 +25,17 @@ final class RateListViewModel: RateListViewModelProtocol {
     private var items: [Item]
     private let repository: RateRepositoryProtocol
     
-    var baseCurrency: Currency
+    var baseCurrency: Currency {
+        didSet {
+            print("currency: \(baseCurrency)")
+        }
+    }
     
-    var baseAmount: Double
+    var baseAmount: Double {
+        didSet {
+            print("amount: \(baseAmount)")
+        }
+    }
     
     var count: Int {
         return items.count
