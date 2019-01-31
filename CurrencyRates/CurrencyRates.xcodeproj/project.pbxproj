@@ -22,6 +22,10 @@
 		AC049D5B2202F82300F39BCF /* RatesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D5A2202F82300F39BCF /* RatesResponse.swift */; };
 		AC049D5E2202F8D300F39BCF /* rates.json in Resources */ = {isa = PBXBuildFile; fileRef = AC049D5D2202F8D300F39BCF /* rates.json */; };
 		AC049D602202F90100F39BCF /* RatesResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D5F2202F90100F39BCF /* RatesResponseTests.swift */; };
+		AC049D65220304DC00F39BCF /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D62220304DC00F39BCF /* WebService.swift */; };
+		AC049D66220304DC00F39BCF /* WebServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D63220304DC00F39BCF /* WebServiceAssembly.swift */; };
+		AC049D67220304DC00F39BCF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D64220304DC00F39BCF /* Endpoint.swift */; };
+		AC049D692203056200F39BCF /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D682203056200F39BCF /* EndpointTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +94,10 @@
 		AC049D5A2202F82300F39BCF /* RatesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesResponse.swift; sourceTree = "<group>"; };
 		AC049D5D2202F8D300F39BCF /* rates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rates.json; sourceTree = "<group>"; };
 		AC049D5F2202F90100F39BCF /* RatesResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesResponseTests.swift; sourceTree = "<group>"; };
+		AC049D62220304DC00F39BCF /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		AC049D63220304DC00F39BCF /* WebServiceAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceAssembly.swift; sourceTree = "<group>"; };
+		AC049D64220304DC00F39BCF /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		AC049D682203056200F39BCF /* EndpointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +181,7 @@
 		AC049D352202F2ED00F39BCF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AC049D61220304B800F39BCF /* WebService */,
 				AC049D522202F30100F39BCF /* Common */,
 				AC049D362202F2ED00F39BCF /* Core.h */,
 				AC049D372202F2ED00F39BCF /* Info.plist */,
@@ -187,6 +196,7 @@
 				AC049D452202F2EE00F39BCF /* Info.plist */,
 				AC049D582202F64A00F39BCF /* CurrencyTests.swift */,
 				AC049D5F2202F90100F39BCF /* RatesResponseTests.swift */,
+				AC049D682203056200F39BCF /* EndpointTests.swift */,
 			);
 			path = CoreTests;
 			sourceTree = "<group>";
@@ -230,6 +240,16 @@
 				AC049D5D2202F8D300F39BCF /* rates.json */,
 			);
 			path = JSONData;
+			sourceTree = "<group>";
+		};
+		AC049D61220304B800F39BCF /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				AC049D64220304DC00F39BCF /* Endpoint.swift */,
+				AC049D62220304DC00F39BCF /* WebService.swift */,
+				AC049D63220304DC00F39BCF /* WebServiceAssembly.swift */,
+			);
+			path = WebService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,8 +446,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC049D65220304DC00F39BCF /* WebService.swift in Sources */,
 				AC049D572202F32800F39BCF /* Currency.swift in Sources */,
+				AC049D66220304DC00F39BCF /* WebServiceAssembly.swift in Sources */,
 				AC049D5B2202F82300F39BCF /* RatesResponse.swift in Sources */,
+				AC049D67220304DC00F39BCF /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC049D602202F90100F39BCF /* RatesResponseTests.swift in Sources */,
+				AC049D692203056200F39BCF /* EndpointTests.swift in Sources */,
 				AC049D592202F64A00F39BCF /* CurrencyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
