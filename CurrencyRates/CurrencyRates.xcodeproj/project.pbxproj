@@ -37,6 +37,7 @@
 		AC049D80220308F100F39BCF /* RateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D7F220308F100F39BCF /* RateRepository.swift */; };
 		AC049D822203095900F39BCF /* RateListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D812203095900F39BCF /* RateListViewModel.swift */; };
 		AC049D8422030A8B00F39BCF /* RateCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8322030A8B00F39BCF /* RateCellPresenter.swift */; };
+		AC049D8622032B2100F39BCF /* RateListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8522032B2100F39BCF /* RateListAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		AC049D7F220308F100F39BCF /* RateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRepository.swift; sourceTree = "<group>"; };
 		AC049D812203095900F39BCF /* RateListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateListViewModel.swift; sourceTree = "<group>"; };
 		AC049D8322030A8B00F39BCF /* RateCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCellPresenter.swift; sourceTree = "<group>"; };
+		AC049D8522032B2100F39BCF /* RateListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateListAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 		AC049D752203066700F39BCF /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				AC049D8522032B2100F39BCF /* RateListAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				AC049D7D2203078700F39BCF /* RateCell.swift in Sources */,
 				AC049D67220304DC00F39BCF /* Endpoint.swift in Sources */,
 				AC049D79220306B000F39BCF /* RateListViewController.swift in Sources */,
+				AC049D8622032B2100F39BCF /* RateListAssembly.swift in Sources */,
 				AC049D6F2203061400F39BCF /* UIViewController+ChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

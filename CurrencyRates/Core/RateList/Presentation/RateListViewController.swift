@@ -39,7 +39,7 @@ class RateListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        viewModel.didLoad { [weak self] in
+        viewModel.rates { [weak self] in
             self?.tableView.reloadData()
         }
     }
