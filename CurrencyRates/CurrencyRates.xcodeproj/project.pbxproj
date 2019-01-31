@@ -26,6 +26,10 @@
 		AC049D66220304DC00F39BCF /* WebServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D63220304DC00F39BCF /* WebServiceAssembly.swift */; };
 		AC049D67220304DC00F39BCF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D64220304DC00F39BCF /* Endpoint.swift */; };
 		AC049D692203056200F39BCF /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D682203056200F39BCF /* EndpointTests.swift */; };
+		AC049D6E2203061400F39BCF /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D6A2203061300F39BCF /* UITableView+Reusable.swift */; };
+		AC049D6F2203061400F39BCF /* UIViewController+ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D6B2203061300F39BCF /* UIViewController+ChildViewController.swift */; };
+		AC049D702203061400F39BCF /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D6C2203061400F39BCF /* NibLoadableView.swift */; };
+		AC049D712203061400F39BCF /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D6D2203061400F39BCF /* ReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +102,10 @@
 		AC049D63220304DC00F39BCF /* WebServiceAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceAssembly.swift; sourceTree = "<group>"; };
 		AC049D64220304DC00F39BCF /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AC049D682203056200F39BCF /* EndpointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
+		AC049D6A2203061300F39BCF /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		AC049D6B2203061300F39BCF /* UIViewController+ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildViewController.swift"; sourceTree = "<group>"; };
+		AC049D6C2203061400F39BCF /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		AC049D6D2203061400F39BCF /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +230,8 @@
 		AC049D542202F30D00F39BCF /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				AC049D6C2203061400F39BCF /* NibLoadableView.swift */,
+				AC049D6D2203061400F39BCF /* ReusableView.swift */,
 				AC049D552202F31A00F39BCF /* Extensions */,
 			);
 			path = Additions;
@@ -230,6 +240,8 @@
 		AC049D552202F31A00F39BCF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AC049D6A2203061300F39BCF /* UITableView+Reusable.swift */,
+				AC049D6B2203061300F39BCF /* UIViewController+ChildViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -446,11 +458,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC049D712203061400F39BCF /* ReusableView.swift in Sources */,
+				AC049D702203061400F39BCF /* NibLoadableView.swift in Sources */,
 				AC049D65220304DC00F39BCF /* WebService.swift in Sources */,
 				AC049D572202F32800F39BCF /* Currency.swift in Sources */,
 				AC049D66220304DC00F39BCF /* WebServiceAssembly.swift in Sources */,
 				AC049D5B2202F82300F39BCF /* RatesResponse.swift in Sources */,
+				AC049D6E2203061400F39BCF /* UITableView+Reusable.swift in Sources */,
 				AC049D67220304DC00F39BCF /* Endpoint.swift in Sources */,
+				AC049D6F2203061400F39BCF /* UIViewController+ChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
