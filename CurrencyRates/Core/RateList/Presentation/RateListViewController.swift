@@ -50,6 +50,9 @@ extension RateListViewController: UITableViewDataSource {
         return viewModel.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(RateCell.self)
@@ -64,20 +67,27 @@ extension RateListViewController: UITableViewDataSource {
 extension RateListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let topIndexPath = IndexPath(item: 0, section: 0)
-        guard let tappedCell = tableView.cellForRow(at: indexPath) as? RateCell,
-            let topCell = tableView.cellForRow(at: topIndexPath) as? RateCell else {
+        let secondRowIndexPath = IndexPath(item: 1, section: 0)
+        
+        guard let tappedCell = tableView.cellForRow(at: indexPath) as? RateCell else {
             return
         }
-        // Enable - Disable UITextFields of cells
-        topCell.textField.isUserInteractionEnabled = false
+        // Enable UITextFields of tapped cell
         tappedCell.textField.isUserInteractionEnabled = true
-        
-        // Move tappedCell to the top
-        tableView.moveRow(at: indexPath, to: topIndexPath)
         
         // UITextField becomes first responder
         tappedCell.textField.becomeFirstResponder()
         
+        // Move tappedCell to the top
+        tableView.moveRow(at: indexPath, to: topIndexPath)
+        
+        guard let secondCell = tableView.cellForRow(at: secondRowIndexPath) as? RateCell else {
+            return
+        }
+        
+        // Disable text field of second cell
+        secondCell.textField.isUserInteractionEnabled = false
+         
         #warning("Add textfield delegate or notifications")
     }
 }

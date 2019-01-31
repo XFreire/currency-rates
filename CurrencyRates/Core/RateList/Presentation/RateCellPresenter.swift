@@ -11,9 +11,9 @@ import Foundation
 final class RateCellPresenter {
     
     func present(_ item: Item, in cell: RateCell) {
-        cell.titleLabel.text = item.currency.name
-        cell.subtitleLabel.text = item.currency.rawValue
-        
+        cell.subtitleLabel.text = item.currency.name
+        cell.titleLabel.text = item.currency.rawValue
+        cell.textField.isUserInteractionEnabled = false
         cell.textField.text = "\(item.amount)"
     }
 }

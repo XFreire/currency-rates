@@ -57,10 +57,12 @@ final class RateListViewModel: RateListViewModelProtocol {
                 self.items.append((currency: $0, amount: $1))
             }
             
-            completion()
+            DispatchQueue.main.async {
+                completion()
+            }
             
-            }, catchError: { _ in
-                #warning("Implement")
+        }, catchError: { _ in
+            #warning("Implement")
         })
     }
     

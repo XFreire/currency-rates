@@ -37,6 +37,7 @@
 		AC049D8422030A8B00F39BCF /* RateCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8322030A8B00F39BCF /* RateCellPresenter.swift */; };
 		AC049D8622032B2100F39BCF /* RateListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8522032B2100F39BCF /* RateListAssembly.swift */; };
 		AC049D8822032BEF00F39BCF /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8722032BEF00F39BCF /* CoreAssembly.swift */; };
+		AC049D8A22032C7000F39BCF /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8922032C7000F39BCF /* AppAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		AC049D8322030A8B00F39BCF /* RateCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCellPresenter.swift; sourceTree = "<group>"; };
 		AC049D8522032B2100F39BCF /* RateListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateListAssembly.swift; sourceTree = "<group>"; };
 		AC049D8722032BEF00F39BCF /* CoreAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
+		AC049D8922032C7000F39BCF /* AppAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				AC049D0F2202F0DB00F39BCF /* AppDelegate.swift */,
+				AC049D8922032C7000F39BCF /* AppAssembly.swift */,
 				AC049D162202F0DE00F39BCF /* Assets.xcassets */,
 				AC049D182202F0DE00F39BCF /* LaunchScreen.storyboard */,
 				AC049D1B2202F0DE00F39BCF /* Info.plist */,
@@ -504,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC049D102202F0DB00F39BCF /* AppDelegate.swift in Sources */,
+				AC049D8A22032C7000F39BCF /* AppAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
