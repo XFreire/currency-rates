@@ -25,7 +25,7 @@ final class RateListViewModel: RateListViewModelProtocol {
     private var items: [Item]
     private let repository: RateRepositoryProtocol
     private var timer = Timer()
-    
+    private var rates: [Currency : Double]
     var didUpdateRates: ([Item]) -> Void = { _ in }
     
     var baseCurrency: Currency {
@@ -37,6 +37,8 @@ final class RateListViewModel: RateListViewModelProtocol {
     var baseAmount: Double {
         didSet {
             print("amount: \(baseAmount)")
+            items = calculateItems(with: baseCurrency, and: baseAmount)
+            didUpdateRates(items)
         }
     }
     
@@ -50,6 +52,7 @@ final class RateListViewModel: RateListViewModelProtocol {
         self.items = [Item]()
         self.baseCurrency = baseCurrency
         self.baseAmount = 1.0
+        self.rates = [Currency : Double]()
     }
     
     func didLoad() {
@@ -61,17 +64,9 @@ final class RateListViewModel: RateListViewModelProtocol {
         repository.rates(base: baseCurrency, then: { [weak self] response in
             guard let self = self else { return }
             self.baseCurrency = response.base
+            self.rates = response.rates
             
-            self.items = []
-            // Append current currency to items array
-            self.items.append((currency: self.baseCurrency, amount: self.baseAmount))
-            
-            // Append rates
-            let ratesMultipliedByCurrentAmount = response.rates.mapValues{ $0 * self.baseAmount }
-            
-            ratesMultipliedByCurrentAmount.forEach {
-                self.items.append((currency: $0, amount: $1))
-            }
+            self.items = self.calculateItems(with: self.baseCurrency, and: self.baseAmount)
             
             DispatchQueue.main.async {
                 self.didUpdateRates(self.items)
@@ -87,4 +82,23 @@ final class RateListViewModel: RateListViewModelProtocol {
     }
     
     
+}
+
+extension RateListViewModel {
+    @discardableResult
+    func calculateItems(with currency: Currency, and amount: Double) -> [Item] {
+        var items = [Item]()
+        
+        // Append current currency to items array
+        items.append((currency: self.baseCurrency, amount: self.baseAmount))
+        
+        // Append rates
+        let ratesMultipliedByCurrentAmount = rates.mapValues { $0 * baseAmount }
+        
+        ratesMultipliedByCurrentAmount.forEach {
+            items.append((currency: $0, amount: $1))
+        }
+        
+        return items
+    }
 }
