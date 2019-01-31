@@ -32,7 +32,7 @@ class RateListViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    var count = 0
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,19 +40,29 @@ class RateListViewController: UIViewController {
         tableView.dataSource = self
         viewModel.didLoad()
         
-        viewModel.didUpdateRates = { [weak self] _ in
-            self?.tableView.reloadData()
+        viewModel.didUpdateRates = { [weak self] items in
+            guard let self = self else { return }
+
+            if self.count == 0 {
+                self.tableView.reloadData()
+                self.count += 1
+            }
+            else {
+                for i in 1..<items.count {
+                    guard let cell = self.tableView.cellForRow(at: IndexPath(row: i, section: 0)) as? RateCell else { return }
+                    self.cellPresenter.present(items[i], in: cell)
+                }
+            }
         }
     }
 }
 
 extension RateListViewController {
     @objc func textDidChange(textField: UITextField) {
-        guard let numberString = textField.text,
-            let amount = Double(numberString) else { return }
+        guard let numberString = textField.text else { return }
         
         // Bind text to viewModel
-        viewModel.baseAmount = amount
+        viewModel.baseAmount = Double(numberString) ?? 0
     }
 }
 extension RateListViewController: UITableViewDataSource {
@@ -101,10 +111,10 @@ extension RateListViewController: UITableViewDelegate {
         // Bind currency to viewModel
         guard let currencyString = tappedCell.titleLabel.text,
             let currency = Currency(rawValue: currencyString),
-            let amountString = tappedCell.textField.text,
-            let amount = Double(amountString) else { return }
-        
+            let amountString = tappedCell.textField.text else { return }
+    
         viewModel.baseCurrency = currency
-        viewModel.baseAmount = amount
+        viewModel.baseAmount = Double(amountString) ?? 0
+        
      }
 }

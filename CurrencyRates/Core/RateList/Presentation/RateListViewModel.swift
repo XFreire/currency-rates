@@ -60,9 +60,9 @@ final class RateListViewModel: RateListViewModelProtocol {
     @objc private func getRatesMultipliedByCurrentAmount() {
         repository.rates(base: baseCurrency, then: { [weak self] response in
             guard let self = self else { return }
-            self.items = []
             self.baseCurrency = response.base
             
+            self.items = []
             // Append current currency to items array
             self.items.append((currency: self.baseCurrency, amount: self.baseAmount))
             
