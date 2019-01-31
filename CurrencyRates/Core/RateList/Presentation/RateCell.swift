@@ -18,6 +18,6 @@ class RateCell: UITableViewCell, NibLoadableView, ReusableView {
         titleLabel.text = nil
         subtitleLabel.text = nil
         textField.text = nil
-        textField.isUserInteractionEnabled = false
+//        textField.isUserInteractionEnabled = false
     }
 }

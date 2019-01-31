@@ -14,6 +14,6 @@ final class RateCellPresenter {
         cell.subtitleLabel.text = item.currency.name
         cell.titleLabel.text = item.currency.rawValue
         cell.textField.isUserInteractionEnabled = false
-        cell.textField.text = "\(item.amount)"
+        cell.textField.text = String(format: "%.4f", item.amount)
     }
 }

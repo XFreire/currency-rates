@@ -38,8 +38,9 @@ class RateListViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        viewModel.didLoad()
         
-        viewModel.rates { [weak self] in
+        viewModel.didUpdateRates = { [weak self] _ in
             self?.tableView.reloadData()
         }
     }
@@ -99,8 +100,11 @@ extension RateListViewController: UITableViewDelegate {
         
         // Bind currency to viewModel
         guard let currencyString = tappedCell.titleLabel.text,
-            let currency = Currency(rawValue: currencyString) else { return }
+            let currency = Currency(rawValue: currencyString),
+            let amountString = tappedCell.textField.text,
+            let amount = Double(amountString) else { return }
         
         viewModel.baseCurrency = currency
+        viewModel.baseAmount = amount
      }
 }
