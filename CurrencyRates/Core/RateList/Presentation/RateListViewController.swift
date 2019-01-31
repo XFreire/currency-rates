@@ -42,6 +42,10 @@ class RateListViewController: UIViewController {
         tableView.dataSource = self
         viewModel.didLoad()
         
+        viewModel.didGetError = { [weak self] in
+            self?.add(ErrorViewController(error: $0.localizedDescription))
+        }
+        
         viewModel.didUpdateRates = { [weak self] items in
             guard let self = self else { return }
 

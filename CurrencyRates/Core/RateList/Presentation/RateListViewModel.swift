@@ -15,6 +15,7 @@ protocol RateListViewModelProtocol {
     var baseAmount: Double { get set }
     var count: Int { get }
     var didUpdateRates: ([Item]) -> Void { get set }
+    var didGetError: (Error) -> Void { get set }
     func didLoad()
     func item(at index: Int) -> Item?
 }
@@ -27,7 +28,7 @@ final class RateListViewModel: RateListViewModelProtocol {
     private var timer = Timer()
     private var rates: [Currency : Double]
     var didUpdateRates: ([Item]) -> Void = { _ in }
-    
+    var didGetError: (Error) -> Void = { _ in }
     var baseCurrency: Currency {
         didSet {
             print("currency: \(baseCurrency)")
@@ -72,16 +73,14 @@ final class RateListViewModel: RateListViewModelProtocol {
                 self.didUpdateRates(self.items)
             }
             
-            }, catchError: { _ in
-                #warning("Implement")
+            }, catchError: { [weak self] in
+                self?.didGetError($0)
         })
     }
     func item(at index: Int) -> Item? {
         guard index < count else { return nil }
         return items[index]
     }
-    
-    
 }
 
 extension RateListViewModel {

@@ -38,6 +38,8 @@
 		AC049D8622032B2100F39BCF /* RateListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8522032B2100F39BCF /* RateListAssembly.swift */; };
 		AC049D8822032BEF00F39BCF /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8722032BEF00F39BCF /* CoreAssembly.swift */; };
 		AC049D8A22032C7000F39BCF /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8922032C7000F39BCF /* AppAssembly.swift */; };
+		AC049D8D220353FA00F39BCF /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC049D8B220353FA00F39BCF /* ErrorViewController.xib */; };
+		AC049D8E220353FA00F39BCF /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8C220353FA00F39BCF /* ErrorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,8 @@
 		AC049D8522032B2100F39BCF /* RateListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateListAssembly.swift; sourceTree = "<group>"; };
 		AC049D8722032BEF00F39BCF /* CoreAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		AC049D8922032C7000F39BCF /* AppAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		AC049D8B220353FA00F39BCF /* ErrorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorViewController.xib; sourceTree = "<group>"; };
+		AC049D8C220353FA00F39BCF /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +233,7 @@
 		AC049D522202F30100F39BCF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AC049D8F220353FE00F39BCF /* VIews */,
 				AC049D542202F30D00F39BCF /* Additions */,
 				AC049D532202F30800F39BCF /* Domain */,
 			);
@@ -326,6 +331,15 @@
 				AC049D8722032BEF00F39BCF /* CoreAssembly.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		AC049D8F220353FE00F39BCF /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				AC049D8C220353FA00F39BCF /* ErrorViewController.swift */,
+				AC049D8B220353FA00F39BCF /* ErrorViewController.xib */,
+			);
+			path = VIews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,6 +500,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC049D8D220353FA00F39BCF /* ErrorViewController.xib in Resources */,
 				AC049D7A220306B000F39BCF /* RateListViewController.xib in Resources */,
 				AC049D7E2203078700F39BCF /* RateCell.xib in Resources */,
 			);
@@ -538,6 +553,7 @@
 				AC049D67220304DC00F39BCF /* Endpoint.swift in Sources */,
 				AC049D79220306B000F39BCF /* RateListViewController.swift in Sources */,
 				AC049D8622032B2100F39BCF /* RateListAssembly.swift in Sources */,
+				AC049D8E220353FA00F39BCF /* ErrorViewController.swift in Sources */,
 				AC049D6F2203061400F39BCF /* UIViewController+ChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
