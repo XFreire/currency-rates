@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RateCell: UITableViewCell {
+class RateCell: UITableViewCell, NibLoadableView, ReusableView {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -18,5 +18,6 @@ class RateCell: UITableViewCell {
         titleLabel.text = nil
         subtitleLabel.text = nil
         textField.text = nil
+        textField.isUserInteractionEnabled = false
     }
 }
