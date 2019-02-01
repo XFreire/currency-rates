@@ -40,6 +40,8 @@
 		AC049D8A22032C7000F39BCF /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8922032C7000F39BCF /* AppAssembly.swift */; };
 		AC049D8D220353FA00F39BCF /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC049D8B220353FA00F39BCF /* ErrorViewController.xib */; };
 		AC049D8E220353FA00F39BCF /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8C220353FA00F39BCF /* ErrorViewController.swift */; };
+		AC6E683922042C0800EB0430 /* RateRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E683822042C0800EB0430 /* RateRepositoryMock.swift */; };
+		AC6E683B22042CEB00EB0430 /* RateRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E683A22042CEB00EB0430 /* RateRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,8 @@
 		AC049D8922032C7000F39BCF /* AppAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		AC049D8B220353FA00F39BCF /* ErrorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorViewController.xib; sourceTree = "<group>"; };
 		AC049D8C220353FA00F39BCF /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		AC6E683822042C0800EB0430 /* RateRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRepositoryMock.swift; sourceTree = "<group>"; };
+		AC6E683A22042CEB00EB0430 /* RateRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,11 +225,13 @@
 		AC049D422202F2EE00F39BCF /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				AC6E683722042BF600EB0430 /* Mocks */,
 				AC049D5C2202F8C300F39BCF /* JSONData */,
 				AC049D452202F2EE00F39BCF /* Info.plist */,
 				AC049D582202F64A00F39BCF /* CurrencyTests.swift */,
 				AC049D5F2202F90100F39BCF /* RatesResponseTests.swift */,
 				AC049D682203056200F39BCF /* EndpointTests.swift */,
+				AC6E683A22042CEB00EB0430 /* RateRepositoryTests.swift */,
 			);
 			path = CoreTests;
 			sourceTree = "<group>";
@@ -340,6 +346,14 @@
 				AC049D8B220353FA00F39BCF /* ErrorViewController.xib */,
 			);
 			path = VIews;
+			sourceTree = "<group>";
+		};
+		AC6E683722042BF600EB0430 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				AC6E683822042C0800EB0430 /* RateRepositoryMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,8 +577,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC049D602202F90100F39BCF /* RatesResponseTests.swift in Sources */,
+				AC6E683922042C0800EB0430 /* RateRepositoryMock.swift in Sources */,
 				AC049D692203056200F39BCF /* EndpointTests.swift in Sources */,
 				AC049D592202F64A00F39BCF /* CurrencyTests.swift in Sources */,
+				AC6E683B22042CEB00EB0430 /* RateRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
