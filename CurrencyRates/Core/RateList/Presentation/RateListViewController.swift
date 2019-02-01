@@ -92,7 +92,25 @@ extension RateListViewController: UITableViewDataSource {
 }
 
 extension RateListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let tappedCell = tableView.cellForRow(at: indexPath) as? RateCell else {
+            return
+        }
+        
+        // Set texfield of cell as first responder
+        setTextFieldAsFirstResponder(tappedCell.textField)
+        
+        // Move tappedCell to the top
+        let topIndexPath = IndexPath(item: 0, section: 0)
+        tableView.moveRow(at: indexPath, to: topIndexPath)
+        tableView.scrollToRow(at: topIndexPath, at: .top, animated: true)
+        
+        // Bind cell info with viewModel
+        setupBindings(with: tappedCell)
+     }
+}
+
+extension RateListViewController {
     @objc func setTextFieldAsFirstResponder(_ textField: UITextField) {
         // Enable UITextFields of tapped cell
         textField.isUserInteractionEnabled = true
@@ -110,20 +128,4 @@ extension RateListViewController: UITableViewDelegate {
         viewModel.baseCurrency = currency
         viewModel.baseAmount = Double(amountString) ?? 0
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let tappedCell = tableView.cellForRow(at: indexPath) as? RateCell else {
-            return
-        }
-        
-        // Set texfield of cell as first responder
-        setTextFieldAsFirstResponder(tappedCell.textField)
-        
-        // Move tappedCell to the top
-        let topIndexPath = IndexPath(item: 0, section: 0)
-        tableView.moveRow(at: indexPath, to: topIndexPath)
-        tableView.scrollToRow(at: topIndexPath, at: .top, animated: true)
-        
-        // Bind cell info with viewModel
-        setupBindings(with: tappedCell)
-     }
 }
