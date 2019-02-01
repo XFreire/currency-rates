@@ -42,6 +42,11 @@
 		AC049D8E220353FA00F39BCF /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC049D8C220353FA00F39BCF /* ErrorViewController.swift */; };
 		AC6E683922042C0800EB0430 /* RateRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E683822042C0800EB0430 /* RateRepositoryMock.swift */; };
 		AC6E683B22042CEB00EB0430 /* RateRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E683A22042CEB00EB0430 /* RateRepositoryTests.swift */; };
+		AC6E683D22042E7F00EB0430 /* RateListViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E683C22042E7F00EB0430 /* RateListViewControllerMock.swift */; };
+		AC6E683F22042F5A00EB0430 /* RateListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E683E22042F5A00EB0430 /* RateListViewControllerTests.swift */; };
+		AC6E684122042FA500EB0430 /* RateListViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E684022042FA500EB0430 /* RateListViewModelMock.swift */; };
+		AC6E6845220436F400EB0430 /* RateCellPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E6844220436F400EB0430 /* RateCellPresenterTests.swift */; };
+		AC6E68472204380A00EB0430 /* RateCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E68462204380A00EB0430 /* RateCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +135,11 @@
 		AC049D8C220353FA00F39BCF /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		AC6E683822042C0800EB0430 /* RateRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRepositoryMock.swift; sourceTree = "<group>"; };
 		AC6E683A22042CEB00EB0430 /* RateRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRepositoryTests.swift; sourceTree = "<group>"; };
+		AC6E683C22042E7F00EB0430 /* RateListViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateListViewControllerMock.swift; sourceTree = "<group>"; };
+		AC6E683E22042F5A00EB0430 /* RateListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateListViewControllerTests.swift; sourceTree = "<group>"; };
+		AC6E684022042FA500EB0430 /* RateListViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateListViewModelMock.swift; sourceTree = "<group>"; };
+		AC6E6844220436F400EB0430 /* RateCellPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCellPresenterTests.swift; sourceTree = "<group>"; };
+		AC6E68462204380A00EB0430 /* RateCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +242,9 @@
 				AC049D5F2202F90100F39BCF /* RatesResponseTests.swift */,
 				AC049D682203056200F39BCF /* EndpointTests.swift */,
 				AC6E683A22042CEB00EB0430 /* RateRepositoryTests.swift */,
+				AC6E683E22042F5A00EB0430 /* RateListViewControllerTests.swift */,
+				AC6E6844220436F400EB0430 /* RateCellPresenterTests.swift */,
+				AC6E68462204380A00EB0430 /* RateCellTests.swift */,
 			);
 			path = CoreTests;
 			sourceTree = "<group>";
@@ -352,6 +365,8 @@
 			isa = PBXGroup;
 			children = (
 				AC6E683822042C0800EB0430 /* RateRepositoryMock.swift */,
+				AC6E683C22042E7F00EB0430 /* RateListViewControllerMock.swift */,
+				AC6E684022042FA500EB0430 /* RateListViewModelMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -576,11 +591,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC6E683D22042E7F00EB0430 /* RateListViewControllerMock.swift in Sources */,
 				AC049D602202F90100F39BCF /* RatesResponseTests.swift in Sources */,
 				AC6E683922042C0800EB0430 /* RateRepositoryMock.swift in Sources */,
+				AC6E68472204380A00EB0430 /* RateCellTests.swift in Sources */,
 				AC049D692203056200F39BCF /* EndpointTests.swift in Sources */,
+				AC6E684122042FA500EB0430 /* RateListViewModelMock.swift in Sources */,
+				AC6E6845220436F400EB0430 /* RateCellPresenterTests.swift in Sources */,
 				AC049D592202F64A00F39BCF /* CurrencyTests.swift in Sources */,
 				AC6E683B22042CEB00EB0430 /* RateRepositoryTests.swift in Sources */,
+				AC6E683F22042F5A00EB0430 /* RateListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

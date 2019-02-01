@@ -20,7 +20,7 @@ protocol RateListViewModelProtocol {
     func item(at index: Int) -> Item?
 }
 
-final class RateListViewModel: RateListViewModelProtocol {
+class RateListViewModel: RateListViewModelProtocol {
     
     // MARK: Properties
     private var items: [Item]

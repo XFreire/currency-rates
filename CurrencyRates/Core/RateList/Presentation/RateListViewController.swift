@@ -11,7 +11,7 @@ import UIKit
 class RateListViewController: UIViewController {
 
     // MARK: - Outlets
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet var tableView: UITableView! {
         didSet {
             tableView.register(RateCell.self)
             tableView.estimatedRowHeight = 70
@@ -19,7 +19,7 @@ class RateListViewController: UIViewController {
     }
     
     // MARK: Properties
-    private var viewModel: RateListViewModelProtocol
+    var viewModel: RateListViewModelProtocol
     private let cellPresenter: RateCellPresenter
     private var isFirstTime = true
     
@@ -93,7 +93,7 @@ extension RateListViewController: UITableViewDataSource {
 
 extension RateListViewController: UITableViewDelegate {
     
-    private func setTextFieldAsFirstResponder(_ textField: UITextField) {
+    @objc func setTextFieldAsFirstResponder(_ textField: UITextField) {
         // Enable UITextFields of tapped cell
         textField.isUserInteractionEnabled = true
         
@@ -102,7 +102,7 @@ extension RateListViewController: UITableViewDelegate {
         textField.addTarget(self, action: #selector(textDidChange(textField:)), for: .editingChanged)
     }
     
-    private func setupBindings(with cell: RateCell) {
+    @objc func setupBindings(with cell: RateCell) {
         guard let currencyString = cell.titleLabel.text,
             let currency = Currency(rawValue: currencyString),
             let amountString = cell.textField.text else { return }

@@ -24,5 +24,10 @@ class CurrencyTests: XCTestCase {
         XCTAssertNotNil(currency.name)
         XCTAssertEqual(currency.name, "Euro")
     }
+    
+    func testCurrencyHashable() {
+        let currency: Currency = .EUR
+        XCTAssertNotNil(currency.hashValue)
+    }
 
 }
