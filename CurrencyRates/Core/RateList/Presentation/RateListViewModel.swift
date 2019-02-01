@@ -92,11 +92,12 @@ extension RateListViewModel {
         items.append((currency: self.baseCurrency, amount: self.baseAmount))
         
         // Append rates
-        let ratesMultipliedByCurrentAmount = rates.mapValues { $0 * baseAmount }
+        let ratesMultipliedByCurrentAmount = rates
+            .mapValues { $0 * baseAmount }
+            .map{ (currency: $0, amount: $1) }
+            .sorted{ $1.currency.rawValue > $0.currency.rawValue }
         
-        ratesMultipliedByCurrentAmount.forEach {
-            items.append((currency: $0, amount: $1))
-        }
+        items.append(contentsOf: ratesMultipliedByCurrentAmount)
         
         return items
     }
