@@ -60,26 +60,4 @@ class RateListViewControllerTests: XCTestCase {
         let cell = tableView?.dequeueReusableCell(RateCell.self)
         XCTAssertNotNil(cell)
     }
-    
-//    func testRateListViewController_DidSelectCell_BindingsAndTextFieldAsFirstResponder() {
-//        let expectation = self.expectation(description: "testRateListViewController_ViewDidLoad_TableViewHasTheCorrectNumberOfCells")
-//        viewController.loadViewIfNeeded()
-//        viewController.viewDidLoad()
-//        let tableView = viewController.tableView!
-//       
-//        viewModel.didUpdateRates = { [weak self] _ in
-//            guard let self = self else {
-//                XCTFail()
-//                return
-//            }
-//            let index = IndexPath(item: 3, section: 0)
-//            self.viewController.tableView(tableView, didSelectRowAt: index)
-//
-//            expectation.fulfill()
-//            XCTAssertTrue(self.viewController.setupBindingsCalled)
-//            XCTAssertTrue(self.viewController.setTextFieldAsFirstResponderCalled)
-//           
-//        }
-//        wait(for: [expectation], timeout: 10)
-//    }
 }
